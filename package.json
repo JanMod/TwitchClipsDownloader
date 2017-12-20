@@ -1,0 +1,25 @@
+{
+  "name": "twitch-clips-downloader",
+  "version": "1.0.0",
+  "description": "Api that lets you download automatically twitch clips and convert them into a .mp4-file.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JanMod/TwitchClipsDownloader.git"
+  },
+  "keywords": [
+    "twitch-clips"
+  ],
+  "author": "Jan Moder",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JanMod/TwitchClipsDownloader/issues"
+  },
+  "homepage": "https://github.com/JanMod/TwitchClipsDownloader#readme",
+  "dependencies": {
+    "download-file": "^0.1.5"
+  }
+}
