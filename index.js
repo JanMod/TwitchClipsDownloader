@@ -2,7 +2,8 @@ const request = require('request');
 var download = require('download-file')
 var cheerio = require('cheerio');
 
-request(
+function myRequest(){
+  request(
         {
         method:'get',
         url:'https://api.twitch.tv/kraken/clips/top?limit=1&channel=lirik&trending=true&period=day',
@@ -19,8 +20,8 @@ request(
 
         }
       //  console.log(response);
-});
-
+})};
+myRequest();
 
 function getMp4Url(name,url_e)
 {
@@ -51,7 +52,7 @@ request(
 function downloadMp4(name, uurl)
 {
   var options = {
-      directory: "",
+      directory: "downloaded_clips",
       filename: name+".mp4"
   }
 
