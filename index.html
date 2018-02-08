@@ -1,19 +1,68 @@
 <!DOCTYPE html>
 <html>
-  <head>
 
+<head>
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="bower_components/angular-material/angular-material.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- angularJS -->
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-aria/angular-aria.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.js"></script>
+  <script src="bower_components/angular-material/angular-material.js"></script>
   <!--app.js-->
-    <script src="www/script/app.js"></script>
+  <script src="www/script/app.js"></script>
+  <!--controller.js-->
+  <script src="www/script/controller/MainCtrl.js"></script>
+
+
+
+  <meta charset="UTF-8">
+  <title>TwichClipDownloader</title>
+</head>
+
+<body ng-app="app" ng-cloak ng-controller="MainCtrl">
+
+
+  <md-sidenav class="md-sidenav-left md-whiteframe-4dp" md-component-id="left">
+
+    <md-toolbar class="md-theme-light">
+      <h1 class="md-toolbar-tools">Menu</h1>
+    </md-toolbar>
+    <md-content ng-controller="MainCtrl" layout-padding="">
+         <md-content>
+        <md-list flex="">
+        </md-list>
+      </md-content>
+    </md-content>
+  </md-sidenav>
 
 
 
 
+  <md-toolbar class="md-primary">
+    <div class="md-toolbar-tools">
+      <md-button ng-click="menuClicked()" class="md-icon-button" aria-label="Settings" ng-disabled="false">
+        <md-icon md-svg-icon="icons/ic_menu_white_48px.svg"></md-icon>
+      </md-button>
 
-    <meta charset="UTF-8">
-    <title>Hello World!</title>
-  </head>
-  <body ng-app="app" ng-cloak>
-    <h1>Hello World!</h1>
-  
-  </body>
+      <h2 flex="" md-truncate="">Main</h2>
+
+      <md-button class="md-icon-button" aria-label="Favorite">
+        <md-icon md-svg-icon="action:android" style="color: greenyellow;"></md-icon>
+      </md-button>
+
+      <md-button class="md-icon-button" aria-label="More">
+        <md-icon md-svg-icon="img/icons/more_vert.svg"></md-icon>
+      </md-button>
+    </div>
+  </md-toolbar>
+  <md-tabs class="md-primary">
+    <md-tab label="SEARCH"></md-tab>
+    <md-tab label="Tab #2"></md-tab>
+    <md-tab label="Tab #3"></md-tab>
+    
+  </md-tabs>
+</body>
+
 </html>
