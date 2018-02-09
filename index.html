@@ -15,8 +15,9 @@
   <!--controller.js-->
   <script src="www/script/controller/MainCtrl.js"></script>
 
-
-
+  <!--directive.js-->
+  <script src="www/directive/mytab/mytab.js"></script>
+  
   <meta charset="UTF-8">
   <title>TwichClipDownloader</title>
 </head>
@@ -30,7 +31,7 @@
       <h1 class="md-toolbar-tools">Menu</h1>
     </md-toolbar>
     <md-content ng-controller="MainCtrl" layout-padding="">
-         <md-content>
+      <md-content>
         <md-list flex="">
         </md-list>
       </md-content>
@@ -46,7 +47,7 @@
         <md-icon md-svg-icon="icons/ic_menu_white_48px.svg"></md-icon>
       </md-button>
 
-      <h2 flex="" md-truncate="">Main</h2>
+      <h2 flex="" md-truncate="">Main></h2>
 
       <md-button class="md-icon-button" aria-label="Favorite">
         <md-icon md-svg-icon="action:android" style="color: greenyellow;"></md-icon>
@@ -61,8 +62,18 @@
     <md-tab label="SEARCH"></md-tab>
     <md-tab label="Tab #2"></md-tab>
     <md-tab label="Tab #3"></md-tab>
-    
+
   </md-tabs>
+  <my-tabset>
+    <my-tab>
+      <h1>Tab 1</h1>
+    </my-tab>
+    <my-tab>
+      <h1>Tab 2</h1>
+    </my-tab>
+
+  </my-tabset>
+
 </body>
 
 </html>
