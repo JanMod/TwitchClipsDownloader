@@ -1,5 +1,5 @@
-var app = angular.module('app', ['ngMaterial']);
-console.log(app);
+var myapp = angular.module('app', ['ngMaterial', 'ngAnimate']);
+console.log(myapp);
 /*
 app.config(function($mdIconProvider) {
 

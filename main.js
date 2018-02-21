@@ -2,6 +2,21 @@ const {app, BrowserWindow} = require('electron')
 const path = require('path')
 const url = require('url')
 
+//my-own-twitch-npm-modules
+var twitchApi = require('./twitch-clip/getClip.js');
+var mycallback = function(){
+  twitchApi()
+  console.log();
+}
+
+global.twitchNpm = {twitchApi};
+
+global.array = ['Hallo','wie geht','es dir'];
+
+
+
+
+
 // Behalten Sie eine globale Referenz auf das Fensterobjekt. 
 // Wenn Sie dies nicht tun, wird das Fenster automatisch geschlossen, 
 // sobald das Objekt dem JavaScript-Garbagekollektor übergeben wird.
@@ -13,7 +28,7 @@ function createWindow () {
 
   // und Laden der index.html der App.
   win.loadURL(url.format({
-    pathname: path.join(__dirname, 'index.html'),
+    pathname: path.join(__dirname, 'www/index.html'),
     protocol: 'file:',
     slashes: true
   }))

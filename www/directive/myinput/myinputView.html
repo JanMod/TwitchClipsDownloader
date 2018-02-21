@@ -1,0 +1,15 @@
+<div layout="column" class="my-primary my-input" >
+    <div layout="column" class="margin-top" layout-align="center center">
+        <div class="mystreamer" layout="row" flex="50">
+            <md-input-container>
+                <label>{{query.type}}</label>
+                <input type="text" ng-model="input" ng-change="inputChanged(input)" >
+            </md-input-container>
+            <h1 ng-show="httpProm">loading</h1>
+            <img ng-src="{{query.data.logo}}" alt="">
+        </div>
+
+
+    </div>
+
+</div>

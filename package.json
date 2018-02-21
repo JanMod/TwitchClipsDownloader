@@ -1,4 +1,4 @@
- {
+{
   "name": "twitch-clips-downloader",
   "version": "1.0.0",
   "description": "Electron application that lets you download automatically twitch clips and convert them into a .mp4-file.",
@@ -23,6 +23,7 @@
     "download-file": "^0.1.5"
   },
   "devDependencies": {
-    "electron": "^1.7.12"
+    "electron": "^1.7.12",
+    "gulp": "^3.9.1"
   }
 }

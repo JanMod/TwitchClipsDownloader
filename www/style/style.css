@@ -1,0 +1,17 @@
+.active{
+    background: green!important;
+}
+
+.md-mini {
+    width: 20px!important;
+    height: 20px!important;
+    min-height: 0px!important;
+}
+
+.my-primary{
+    background-color:#90caf9;
+}
+
+md-chips.md-default-theme .md-chips, md-chips .md-chips{
+    box-shadow: none;
+}

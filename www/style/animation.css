@@ -1,0 +1,26 @@
+@keyframes leftToright {
+    0%{
+        opacity: 1;
+        transform: translateX(1000);
+    }
+    50%{
+        transform: translateX(1000);
+    }
+    100%{
+        transform: translateX(40);
+        opacity: 0;
+    }
+}
+
+
+
+
+.anim_leftright.ng-hidde-add{
+    position: absolute;
+    animation: 1s leftToright;
+}
+
+.anim_leftright.ng-hidde-remove{
+    
+    animation: 1s leftToright reverse;
+}

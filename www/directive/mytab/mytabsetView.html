@@ -1,0 +1,32 @@
+<div layout-fill layout="row">
+
+    <md-button flex="10" class="md-warn" ng-click="previousTab()" ng-disabled='activeIndex === 0'>
+        previous
+    </md-button>
+
+
+
+
+    <div flex="80" layout-align="center center" layout="column" >
+
+        <div ng-transclude></div>
+
+       
+
+        <div  layout-align="end end">
+            <md-button class="md-fab md-mini mytab-nav" ng-repeat="tab in tabs track by $index" ng-click="setTab($index)" ng-class="tab.tab.active ? '': 'active'">
+                {{tab.tab.selected}}
+            </md-button>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <md-button class="md-warn" flex="10" ng-click="nextTab()" ng-disabled='activeIndex === tabs.length-1'>
+        next
+    </md-button>
+</div>

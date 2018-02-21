@@ -15,10 +15,10 @@ const mkdirSync = function(dirPath) {
 
 
 
-
 class Clip {
 
   constructor(metadata) {
+
     this.request = require('request');
     this.metadata = metadata;
     console.log(this.metadata.broadcaster.display_name);
@@ -41,7 +41,7 @@ class Clip {
   }
 
 
-  getClipUrl(callback) {
+  getClipUrl(error_cb) {
 
     if (this.metadata) {
       this.request.clip = "hallo";
@@ -53,7 +53,7 @@ class Clip {
       }, function(error, response, body) {
         if (error) {
           console.log("Error with getting the mp4-url");
-          callback("Error with getting the mp4-url");
+          error_cb("Error with getting the mp4-url");
         }
         //Print the Response
         let $ = cheerio.load(body);
@@ -74,16 +74,9 @@ class Clip {
 
         }
 
-        //    console.log(clipInfo.quality_options[0].source);
-    //    this.clip.mp4url = clipInfo.quality_options[0].source;
-    //    console.log(this.clip);
-        //  console.log(request.myclip.metadata);
-
         self.mp4url = clipInfo.quality_options[0].source;
-        self.downloadMp4();
-        //return clipInfo.quality_options[0].source;
-
-
+      //  self.downloadMp4();
+  
       })
 
     }
