@@ -24,7 +24,7 @@ class Clip {
     console.log(this.metadata.broadcaster.display_name);
     this.init();
   }
-  createSRT() {
+  createSRT(success) {
     fs.writeFile(this.path + "/sub.srt", "1 \n 00:00:01,000 --> 00:00:05,000 \n" + this.metadata.broadcaster.display_name, function(err) {
       if (err) {
         console.log(err);
@@ -41,19 +41,16 @@ class Clip {
   }
 
 
-  getClipUrl(error_cb) {
-
+  getClipUrl(successCb,errorCb) {
     if (this.metadata) {
-      this.request.clip = "hallo";
       let self= this;
       this.request({
         method: 'get',
         url: this.metadata.embed_url,
-
       }, function(error, response, body) {
         if (error) {
           console.log("Error with getting the mp4-url");
-          error_cb("Error with getting the mp4-url");
+          errorCb("Error with getting the mp4-url");
         }
         //Print the Response
         let $ = cheerio.load(body);
@@ -69,14 +66,11 @@ class Clip {
           var clipInfo = eval((newtext));
 
         } catch (e) {
-
-        } finally {
-
+          errorCb('eval function error');
         }
 
         self.mp4url = clipInfo.quality_options[0].source;
-      //  self.downloadMp4();
-  
+        successCb('Getting url succeeded');
       })
 
     }

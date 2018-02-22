@@ -10,9 +10,6 @@
                 visible: "=visible"
             },
             controller: function ($scope, twitchApi, $timeout) {
-                console.log($scope);
-
-
 
                 $scope.inputChanged = function (input) {
                     if (input === "") {
@@ -30,7 +27,6 @@
                                     $scope.query.data = resolved.data.users[0];
                                     $scope.input = $scope.query.name = $scope.query.data.display_name;
                                     
-                                    console.log($scope.query.data);
                                 })
                             } break;
                             case "Game": {
@@ -38,7 +34,6 @@
                                     $scope.httpProm = false;
                                     $scope.query.data = resolved.data.data[0];
                                     $scope.input = $scope.query.name = $scope.query.data.name;
-                                    console.log($scope.query.data);
                                 })
                             } break;
                         }

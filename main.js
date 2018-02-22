@@ -3,13 +3,10 @@ const path = require('path')
 const url = require('url')
 
 //my-own-twitch-npm-modules
-var twitchApi = require('./twitch-clip/getClip.js');
-var mycallback = function(){
-  twitchApi()
-  console.log();
-}
+var getClips = require('./twitch-clip/getClip.js');
 
-global.twitchNpm = {twitchApi};
+
+global.twitchNpm = {getClips};
 
 global.array = ['Hallo','wie geht','es dir'];
 

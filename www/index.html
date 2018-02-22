@@ -35,7 +35,7 @@
   
   <script src="directive/myinput/myinput.js"></script>
   
-
+  <script src="directive/myslider/myslider.js"></script>
   
   <script src="directive/mytab/mytab.js"></script>
   
@@ -96,23 +96,26 @@
         <md-chip ng-click="changeGame()">
           <md-icon md-svg-icon="icons/ic_menu_white_48px.svg"></md-icon>
           {{query.game.name}}
-          <md-icon md-svg-icon="icons/ic_menu_white_48px.svg" ng-click="changeGame()"></md-icon>
+          <md-icon md-svg-icon="icons/ic_menu_white_48px.svg"></md-icon>
         </md-chip>
         <md-chip>
           <md-icon md-svg-icon="icons/ic_menu_white_48px.svg"></md-icon>
           Trending</md-chip>
-        <md-chip>
+        <md-chip ng-click="changeLimit()">
           <md-icon md-svg-icon="icons/ic_menu_white_48px.svg"></md-icon>
-          Limit</md-chip>
+          {{query.limit.data}}
+       </md-chip>
         <md-chip>
           <md-icon md-svg-icon="icons/ic_menu_white_48px.svg"></md-icon>
           Period</md-chip>
 
       </md-chips>
 
+      <md-button class="md-primary" ng-click="search()"> SEARCH </md-button>
 
     </div>
   </md-toolbar>
+  <iframe src='https://clips.twitch.tv/embed?clip=PlayfulNimbleGullTwitchRaid&tt_medium=clips_api&tt_content=embed' width='640' height='360' frameborder='0' scrolling='no' allowfullscreen='true'></iframe>
 </body>
 
 

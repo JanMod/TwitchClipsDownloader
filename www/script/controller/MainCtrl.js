@@ -1,4 +1,4 @@
-myapp.controller('MainCtrl', function ($scope, $mdSidenav, openInput ) {
+myapp.controller('MainCtrl', function ($scope, $mdSidenav, openInput,twitchApi ) {
 
 
     $scope.menuOpen = function () {
@@ -20,7 +20,7 @@ myapp.controller('MainCtrl', function ($scope, $mdSidenav, openInput ) {
         },
         limit: {
             type:"limit",
-            data:""
+            data:"1"
         },
         trending: {
             type:'trending',
@@ -38,6 +38,21 @@ myapp.controller('MainCtrl', function ($scope, $mdSidenav, openInput ) {
 
     $scope.changeGame = function () {
         openInput.open($scope, 'game');
+    }
+
+    $scope.changeLimit = function () {
+        openInput.open($scope, 'limit');
+    }
+
+    $scope.search = function() {
+        twitchApi.getClips().then(function(value){
+           value[0].getClipUrl(function() {
+            value[0].downloadMp4();
+           });
+            
+        })
+       
+        
     }
    // $scope.query = ['Streamer:Lirik', 'Game:Fortnite'];
 });
