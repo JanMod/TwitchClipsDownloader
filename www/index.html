@@ -4,9 +4,10 @@
 <head>
   <title>Mega App</title>
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
- 
+
   <link rel="stylesheet" href="../bower_components/angular-material/angular-material.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 
   <script src="../bower_components/angular/angular.js"></script>
   <script src="../bower_components/angular-aria/angular-aria.js"></script>
@@ -26,38 +27,40 @@
   <!--endinject-->
 
   <!--inject:js-->
-  
 
-  
+
+
   <script src="script/app.js"></script>
-  
 
-  
+
+
   <script src="directive/myinput/myinput.js"></script>
-  
+
+  <script src="directive/mycheckbox/mycheckbox.js"></script>
+
   <script src="directive/myslider/myslider.js"></script>
-  
+
   <script src="directive/mytab/mytab.js"></script>
-  
 
-  
+  <script src "views/List/list.js"></script>
+
   <script src="script/controller/MainCtrl.js"></script>
-  
 
-  
+
+
   <script src="script/service/changeQueryServ.js"></script>
-  
 
-  
+
+
   <script src="script/service/twitchApi.js"></script>
-  
 
-  
+
+
   <!--endinject-->
 
   <!-- angularJS -->
-  
-  
+
+
   <meta charset="UTF-8">
   <title>TwichClipDownloader</title>
 </head>
@@ -88,34 +91,35 @@
       </md-button>
 
       <md-chips flex-fill readonly="true" layout-align="center center">
-        <md-chip ng-click="changeStreamer()">
-          <md-icon md-svg-icon="icons/ic_menu_white_48px.svg"></md-icon>
+        <md-chip ng-click="changeStreamer($event)">
+          <md-icon> &#xE7FD;</md-icon>
           {{query.streamer.name}}
-          <md-icon md-svg-icon="icons/ic_menu_white_48px.svg"></md-icon>
+        
         </md-chip>
-        <md-chip ng-click="changeGame()">
-          <md-icon md-svg-icon="icons/ic_menu_white_48px.svg"></md-icon>
+        <md-chip ng-click="changeGame($event)">
+            <md-icon>   &#xE021;</md-icon>
           {{query.game.name}}
-          <md-icon md-svg-icon="icons/ic_menu_white_48px.svg"></md-icon>
+        </md-chip>
+        <md-chip ng-click="changeTrending($event)">
+      
+          <md-icon> &#xE8E5;</md-icon>
+ 
+          </md-chip>
+        <md-chip ng-click="changeLimit($event)">
+            <md-icon>&#xE242;</md-icon>
+          {{query.limit.data}}
         </md-chip>
         <md-chip>
-          <md-icon md-svg-icon="icons/ic_menu_white_48px.svg"></md-icon>
-          Trending</md-chip>
-        <md-chip ng-click="changeLimit()">
-          <md-icon md-svg-icon="icons/ic_menu_white_48px.svg"></md-icon>
-          {{query.limit.data}}
-       </md-chip>
-        <md-chip>
-          <md-icon md-svg-icon="icons/ic_menu_white_48px.svg"></md-icon>
-          Period</md-chip>
+        
 
       </md-chips>
 
       <md-button class="md-primary" ng-click="search()"> SEARCH </md-button>
-
     </div>
   </md-toolbar>
-  <iframe src='https://clips.twitch.tv/embed?clip=PlayfulNimbleGullTwitchRaid&tt_medium=clips_api&tt_content=embed' width='640' height='360' frameborder='0' scrolling='no' allowfullscreen='true'></iframe>
+
+  <div ng-include="'views/List/list.html'" layout-fill></div>
+
 </body>
 
 

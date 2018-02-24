@@ -1,5 +1,7 @@
-.active{
-    background: green!important;
+.active > *, .active{
+    background: #c62828!important;
+    color: white !important;
+    font-weight: bold;
 }
 
 .md-mini {
@@ -12,6 +14,20 @@
     background-color:#90caf9;
 }
 
-md-chips.md-default-theme .md-chips, md-chips .md-chips{
+md-chips.md-default-theme .md-chips{
     box-shadow: none;
+}
+
+md-toolbar{
+    position:fixed;
+    top:0;
+}
+
+
+md-icon{
+    color:black !important;
+}
+
+:focus{
+    outline: none !important;
 }

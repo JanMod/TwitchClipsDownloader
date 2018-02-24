@@ -1,4 +1,4 @@
-myapp.controller('MainCtrl', function ($scope, $mdSidenav, openInput,twitchApi ) {
+myapp.controller('MainCtrl', function ($scope, $mdSidenav, openInput, twitchApi) {
 
 
     $scope.menuOpen = function () {
@@ -11,48 +11,52 @@ myapp.controller('MainCtrl', function ($scope, $mdSidenav, openInput,twitchApi )
     }
     $scope.query = {
         streamer: {
-            type:"Streamer",
+            type: "Streamer",
             data: ""
         },
         game: {
-            type:"Game",
-            data:""
+            type: "Game",
+            data: ""
         },
         limit: {
-            type:"limit",
-            data:"1"
+            type: "limit",
+            data: "1"
         },
         trending: {
-            type:'trending',
-            data:""
+            type: 'trending',
+            data: false
         },
         period: {
-            type:'period',
-            data:""
+            type: 'period',
+            data: ""
         }
     }
 
-    $scope.changeStreamer = function () {
-        openInput.open($scope, 'streamer');
+    $scope.changeStreamer = function (event) {
+        openInput.open($scope, 'streamer', event.currentTarget);
     }
 
-    $scope.changeGame = function () {
-        openInput.open($scope, 'game');
+    $scope.changeGame = function (event) {
+        openInput.open($scope, 'game', event.currentTarget);
     }
 
-    $scope.changeLimit = function () {
-        openInput.open($scope, 'limit');
+    $scope.changeLimit = function (event) {
+        openInput.open($scope, 'limit', event.currentTarget);
     }
 
-    $scope.search = function() {
-        twitchApi.getClips().then(function(value){
-           value[0].getClipUrl(function() {
-            value[0].downloadMp4();
-           });
-            
+    $scope.changeTrending = function (event) {
+        openInput.open($scope, 'trending', event.currentTarget);
+    }
+    $scope.search = function () {
+        twitchApi.getClips($scope.query).then(function (value) {
+            console.log(value);
+         //   value[0].getClipUrl(function () {
+                //value[0].downloadMp4();
+       //     });
+
         })
-       
-        
+
+
     }
-   // $scope.query = ['Streamer:Lirik', 'Game:Fortnite'];
+    // $scope.query = ['Streamer:Lirik', 'Game:Fortnite'];
 });

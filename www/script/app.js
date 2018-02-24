@@ -1,5 +1,4 @@
 var myapp = angular.module('app', ['ngMaterial', 'ngAnimate']);
-console.log(myapp);
 /*
 app.config(function($mdIconProvider) {
 

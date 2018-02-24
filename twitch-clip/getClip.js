@@ -7,31 +7,38 @@
   var clipsObj = [];
   
   
-  var myRequest = function(successCb, errorCb) {
-    clipsObj = [];
+  var myRequest = function(query,successCb, errorCb) {
+    console.log(query.streamer);
     request({
       method: 'get',
-      url: 'https://api.twitch.tv/kraken/clips/top?limit=5&trending=true&period=month',
+      url: 'https://api.twitch.tv/kraken/clips/top?limit='+query.limit.data+'&trending='+query.trending.data+'&game='+query.game.name+'&period=month&channel='+query.streamer.name,
       headers: {
         'Accept': 'application/vnd.twitchtv.v5+json',
         'Client-ID': 'ztix9khyx6urq2hzmhr4o2ie3ezlhz'
       },
     }, function(error, response, body) {
       //Print the Response  
+    
         if(error)
         {
-          return errorCb;
+          console.log(error);
+          return errorCb();
         }
      
       var clips = JSON.parse(body).clips;
-            
+       if(!(clips instanceof Array)){
+         console.log(response);
+         return errorCb("Wrong query");
+       }
       for (var i = 0; i < clips.length; i++) {
         
         clipsObj.push(new Clip(clips[i]));
      
+   //     clipsObj[i].getClipUrl();
+   //     clipsObj[i].createSRT();
       }
       return successCb(clipsObj);
-    
+      //  console.log(response);
     })
   };
  

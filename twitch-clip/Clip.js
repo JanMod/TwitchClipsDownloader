@@ -22,7 +22,7 @@ class Clip {
     this.request = require('request');
     this.metadata = metadata;
     console.log(this.metadata.broadcaster.display_name);
-    this.init();
+    //this.init();
   }
   createSRT(success) {
     fs.writeFile(this.path + "/sub.srt", "1 \n 00:00:01,000 --> 00:00:05,000 \n" + this.metadata.broadcaster.display_name, function(err) {

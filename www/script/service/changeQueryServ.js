@@ -2,7 +2,7 @@
     'use strict'
     myapp.service('openInput', function ($document, $compile) {
         this.directive = "";
-        this.open = function (scope, element) {
+        this.open = function (scope, element, target) {
 
             if(this.elementType !== element){
                 this.close();
@@ -38,16 +38,20 @@
                     break;
                 case "trending":
                     {
+                        template = angular.element(' <my-checkbox class="my-input" checkbox="query.trending"> </my-checkbox>');
                     }
                     break;
             }
-
+            this.target = angular.element(target);
+            this.target.addClass('active')
             this.directive = $compile(template)(scope);
             this.elementType = element;
-            $document.find('body').append(this.directive);
+            $document.find('md-toolbar').append(this.directive);
         }
         this.close = function () {
             if (this.directive !=="") {
+                this.target.removeClass('active');
+                this.target = {};
                 this.directive.remove();
                 this.directive ="";
                 this.elementType = "";
