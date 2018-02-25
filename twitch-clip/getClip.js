@@ -9,6 +9,7 @@
   
   var myRequest = function(query,successCb, errorCb) {
     console.log(query.streamer);
+    clipsObj = [];
     request({
       method: 'get',
       url: 'https://api.twitch.tv/kraken/clips/top?limit='+query.limit.data+'&trending='+query.trending.data+'&game='+query.game.name+'&period=month&channel='+query.streamer.name,

@@ -42,7 +42,7 @@
 
   <script src="directive/mytab/mytab.js"></script>
 
-  <script src "views/List/list.js"></script>
+  <script src="views/List/list.js"></script>
 
   <script src="script/controller/MainCtrl.js"></script>
 
@@ -103,7 +103,7 @@
         <md-chip ng-click="changeTrending($event)">
       
           <md-icon> &#xE8E5;</md-icon>
- 
+          {{query.trending.data}}
           </md-chip>
         <md-chip ng-click="changeLimit($event)">
             <md-icon>&#xE242;</md-icon>

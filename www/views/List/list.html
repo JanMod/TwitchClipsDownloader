@@ -1,3 +1,29 @@
-<md-content ng-controller="listCtrl" layout-fill style="background:red;">
+<md-content ng-controller="listCtrl"  style="background:red;" layout="column">
+    <md-card>
+        <h1>hallo</h1>
+    </md-card>
 
+    <md-card ng-repeat="clip in clips" layout="row" layout-margin>
+        <div layout-margin flex="30" class="card-streamer" style="background:grey;" layout="column">
+            <h2>{{clip.metadata.broadcaster.display_name}}</h2>
+            <h2>{{clip.metadata.game}}</h2>
+            <h2>{{clip.metadata.views}}</h2>
+        </div>
+        <div flex="70" class="card-streamer" layout="column">
+            <div>
+                <div flex="100">
+                    <img ng-src="{{clip.metadata.thumbnails.small}}" alt="">
+                </div>
+
+            </div>
+
+            <div>
+                <h1>toolbar</h1>
+            </div>
+        </div>
+
+
+    </md-card>
+
+    <md-button ng-click="loading()">Load</md-button>
 </md-content>

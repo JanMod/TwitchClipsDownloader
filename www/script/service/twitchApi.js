@@ -25,9 +25,9 @@
         }
 
         this.getClips = function (query) {
-            var self = this;
+            let self = this;
             return $q(function (resolve, reject) {
-                self.twitchApi.getClips(query,(resp) => { self.clips = resp; resolve(self.clips) },
+                self.twitchApi.getClips(query,(resp) => { angular.copy(resp, self.clips); resolve(self.clips) },
                     (err) => {
                         console.error(err)
                         reject(err);
