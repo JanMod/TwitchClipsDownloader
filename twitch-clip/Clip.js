@@ -21,6 +21,7 @@ class Clip {
 
     this.request = require('request');
     this.metadata = metadata;
+    this.selected = false;
     console.log(this.metadata.broadcaster.display_name);
     //this.init();
   }
@@ -70,7 +71,7 @@ class Clip {
         }
 
         self.mp4url = clipInfo.quality_options[0].source;
-        successCb('Getting url succeeded');
+        successCb(self.mp4url);
       })
 
     }

@@ -1,29 +1,34 @@
-<md-content ng-controller="listCtrl"  style="background:red;" layout="column">
+<md-content class="grey-background" ng-controller="listCtrl" layout="column">
     <md-card>
         <h1>hallo</h1>
     </md-card>
 
-    <md-card ng-repeat="clip in clips" layout="row" layout-margin>
-        <div layout-margin flex="30" class="card-streamer" style="background:grey;" layout="column">
-            <h2>{{clip.metadata.broadcaster.display_name}}</h2>
-            <h2>{{clip.metadata.game}}</h2>
-            <h2>{{clip.metadata.views}}</h2>
-        </div>
-        <div flex="70" class="card-streamer" layout="column">
-            <div>
-                <div flex="100">
-                    <img ng-src="{{clip.metadata.thumbnails.small}}" alt="">
-                </div>
+    <div layout-gt-xs="row" layout-xs="column" layout-wrap layout-align:"center center" style="min-height: 500px;" class="my-flexbox">
+        <md-card class="my-max-width" ng-repeat="clip in clips" ng-style="clip.selected ?  {'border':'2px solid #c62828'}: {'border':'none'} ">
+            <img ng-src="{{clip.metadata.thumbnails.medium}}" class="md-card-image" alt="Washed Out" ng-click="watchClip($index)">
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline">
+                        <img class="avatar-logo" ng-src="{{clip.metadata.broadcaster.logo}}" alt=""> {{clip.metadata.broadcaster.display_name}} - {{clip.metadata.title}} </span>
+                </md-card-title-text>
+            </md-card-title>
+            <md-card-actions layout="row" layout-align="start center">
+                <md-card-icon-actions>
+                    <md-button class="md-icon-button" aria-label="Favorite" ng-click="addClip($index)">
+                        <md-icon> {{clip.selected ? '&#xE15C;' : '&#xE145;'}}</md-icon>
+                    </md-button>
+                </md-card-icon-actions>
+                <md-button>Action 1</md-button>
+                <md-button>Action 2</md-button>
+            </md-card-actions>
+            <md-card-content>
+                <p>
+                    The titles of Washed Out's breakthrough song and the first single from Paracosm share the two most important words in Ernest
+                    Greene's musical language: feel it. It's a simple request, as well...
+                </p>
+            </md-card-content>
+        </md-card>
+    </div>
 
-            </div>
-
-            <div>
-                <h1>toolbar</h1>
-            </div>
-        </div>
-
-
-    </md-card>
-
-    <md-button ng-click="loading()">Load</md-button>
 </md-content>
+

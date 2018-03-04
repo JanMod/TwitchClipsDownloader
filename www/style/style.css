@@ -4,6 +4,14 @@
     font-weight: bold;
 }
 
+body{
+    background-color: #d4cccc;
+}
+
+.grey-background{
+    background-color: #d4cccc;
+}
+
 .md-mini {
     width: 20px!important;
     height: 20px!important;
@@ -21,6 +29,7 @@ md-chips.md-default-theme .md-chips{
 md-toolbar{
     position:fixed;
     top:0;
+    box-shadow: 0px 0px 8px black;
 }
 
 
@@ -30,4 +39,31 @@ md-icon{
 
 :focus{
     outline: none !important;
+}
+
+
+.my-clip{
+    background-color: #90caf9;
+}
+
+.my-clip img{
+    position: absolute;
+    
+    max-width: 400px;
+    height:auto;
+}
+
+.avatar-logo{
+    height:30px;
+    width:30px;
+    border-radius: 10px;
+}
+.my-max-width{
+    max-width:400px;
+  
+}
+
+.my-flexbox{
+    align-items:center!important;
+    justify-content: center!important;
 }

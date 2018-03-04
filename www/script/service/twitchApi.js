@@ -2,6 +2,7 @@
     'use strict'
     myapp.service('twitchApi', function ($http, $q) {
         this.clips = [];
+        this.selectedClips = new Array();
         this.twitchApi = require('electron').remote.getGlobal('twitchNpm');
         this.getChannel = function (name) {
             return $http({

@@ -23,13 +23,13 @@
         if(error)
         {
           console.log(error);
-          return errorCb();
+          errorCb();
         }
      
       var clips = JSON.parse(body).clips;
        if(!(clips instanceof Array)){
          console.log(response);
-         return errorCb("Wrong query");
+        errorCb("Wrong query");
        }
       for (var i = 0; i < clips.length; i++) {
         
@@ -38,7 +38,7 @@
    //     clipsObj[i].getClipUrl();
    //     clipsObj[i].createSRT();
       }
-      return successCb(clipsObj);
+      successCb(clipsObj);
       //  console.log(response);
     })
   };
