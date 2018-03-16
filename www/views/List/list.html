@@ -1,10 +1,12 @@
 <md-content class="grey-background" ng-controller="listCtrl" layout="column">
-    <md-card>
-        <h1>hallo</h1>
-    </md-card>
+    <div style="height: 50px">
 
+    </div>
+    <div ng-if="!clips" layout="row" layout-sm="column" layout-align="space-around">
+            <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+          </div>
     <div layout-gt-xs="row" layout-xs="column" layout-wrap layout-align:"center center" style="min-height: 500px;" class="my-flexbox">
-        <md-card class="my-max-width" ng-repeat="clip in clips" ng-style="clip.selected ?  {'border':'2px solid #c62828'}: {'border':'none'} ">
+        <md-card class="my-max-width" ng-repeat="clip in clips" ng-style="clip.selected ?  {'border':'2px solid #c62828', 'background' : '#EEEEEE'}: {'border':'2px solid transparent'} ">
             <img ng-src="{{clip.metadata.thumbnails.medium}}" class="md-card-image" alt="Washed Out" ng-click="watchClip($index)">
             <md-card-title>
                 <md-card-title-text>
