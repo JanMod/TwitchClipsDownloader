@@ -20,7 +20,8 @@
   },
   "homepage": "https://github.com/JanMod/TwitchClipsDownloader#readme",
   "dependencies": {
-    "download-file": "^0.1.5"
+    "download-file": "^0.1.5",
+    "cheerio": "^1.0.0-rc.2"
   },
   "devDependencies": {
     "electron": "^1.7.12",

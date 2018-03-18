@@ -19,7 +19,7 @@
     "tests"
   ],
   "dependencies": {
-    "angular-material": "^1.1.6",
+    "angular-material": "^1.1.8",
     "material-design-icons": "^3.0.1"
   }
 }
