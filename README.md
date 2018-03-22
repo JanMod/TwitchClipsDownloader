@@ -1,6 +1,7 @@
 node is required;
 
-node install
+npm install
+
 bower install
 
-Run this with npm start
+Run this with node start
